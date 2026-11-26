@@ -1,0 +1,2 @@
+# Sanity Studio is a single-page app: every /studio/... address loads the Studio page.
+/studio/*  /studio  200

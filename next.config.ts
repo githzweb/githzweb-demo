@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
+// Static export: the whole site is plain HTML/JS files in `out/`, hosted free on
+// Cloudflare Pages. Headers (noindex etc.) live in public/_headers and the Studio
+// fallback in public/_redirects, because static export can't use next.config headers.
 const nextConfig: NextConfig = {
+  output: "export",
+  images: { unoptimized: true },
   turbopack: {
     rules: {
       "*.css": {
@@ -8,23 +13,6 @@ const nextConfig: NextConfig = {
         as: "*.css",
       },
     },
-  },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          // Demo site: keep it out of search engines.
-          { key: "X-Robots-Tag", value: "noindex, nofollow" },
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-        ],
-      },
-      {
-        source: "/((?!studio).*)",
-        headers: [{ key: "X-Frame-Options", value: "SAMEORIGIN" }],
-      },
-    ];
   },
 };
 

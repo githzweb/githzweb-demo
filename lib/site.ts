@@ -1,6 +1,6 @@
 // Demo company facts. Everything here is invented. All enquiries go to githzweb.
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://demo-hardware-githzweb.netlify.app";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://demo-hardware-githzweb.pages.dev";
 
 export const DEMO = {
   name: "Demo Hardware Co.",
