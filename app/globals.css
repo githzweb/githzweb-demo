@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+/* Demo Hardware Co. brand: charcoal + safety yellow, light background.
+   Deliberately different from githzweb's own dark/lime look. */
+@theme inline {
+  --color-char: #1c1f23;
+  --color-steel: #5b6470;
+  --color-rule: #e3e1db;
+  --color-sand: #f5f3ee;
+  --color-hivis: #ffc21a;
+  --color-hivis-dark: #e5a800;
+  --color-wa: #1da851;
+  --font-sans: var(--font-archivo);
+  --font-mono: var(--font-plex-mono);
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-char);
+}
+::selection {
+  background: var(--color-hivis);
+  color: var(--color-char);
+}
+:focus-visible {
+  outline: 2px solid var(--color-char);
+  outline-offset: 2px;
+}
+
+/* Yellow-black hazard stripe used as a thin accent line */
+.hazard {
+  background: repeating-linear-gradient(-45deg, var(--color-hivis) 0 12px, var(--color-char) 12px 24px);
+}
