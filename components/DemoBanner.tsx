@@ -11,13 +11,14 @@ export function DemoBanner() {
           <a href={DEMO.githzwebUrl} className="font-semibold underline underline-offset-2">
             githzweb
           </a>
-          . Not a real shop. Products and prices are made up.
+          .<span className="hidden sm:inline"> Not a real shop. Products and prices are made up.</span>
+          <span className="sm:hidden"> Not a real shop.</span>
         </p>
         <a
           href={demoWhatsApp()}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-semibold text-hivis hover:underline"
+          className="hidden font-semibold text-hivis hover:underline sm:inline"
         >
           Want a site like this? &rarr;
         </a>

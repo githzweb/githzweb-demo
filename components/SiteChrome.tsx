@@ -7,8 +7,8 @@ export function Logo() {
     <Link href="/" className="flex items-center gap-2.5" aria-label={`${DEMO.name} home`}>
       <span className="grid h-9 w-9 place-items-center rounded-md bg-hivis font-black text-char">DH</span>
       <span className="leading-tight">
-        <span className="block text-[17px] font-extrabold tracking-tight">Demo Hardware Co.</span>
-        <span className="block font-mono text-[10px] uppercase tracking-widest text-steel">Tools · Fasteners · Supplies</span>
+        <span className="block whitespace-nowrap text-[15px] font-extrabold tracking-tight sm:text-[17px]">Demo Hardware Co.</span>
+        <span className="hidden font-mono text-[10px] uppercase tracking-widest text-steel sm:block">Tools · Fasteners · Supplies</span>
       </span>
     </Link>
   );
@@ -26,14 +26,28 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <a
-          href={demoWhatsApp()}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-md bg-char px-4 py-2.5 text-sm font-semibold text-white hover:bg-black"
-        >
-          Get a quote
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href={demoWhatsApp()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whitespace-nowrap rounded-md bg-char px-4 py-2.5 text-sm font-semibold text-white hover:bg-black"
+          >
+            Get a quote
+          </a>
+          <details className="relative md:hidden">
+            <summary className="cursor-pointer list-none rounded-md border border-rule px-3 py-2.5 text-sm font-semibold [&::-webkit-details-marker]:hidden">
+              Menu
+            </summary>
+            <nav aria-label="Mobile" className="absolute right-0 top-12 z-40 flex w-48 flex-col rounded-lg border border-rule bg-white p-2 shadow-lg">
+              {NAV.map((n) => (
+                <Link key={n.href} href={n.href} className="rounded-md px-3 py-2.5 hover:bg-sand">
+                  {n.label}
+                </Link>
+              ))}
+            </nav>
+          </details>
+        </div>
       </div>
       <div className="hazard h-1" aria-hidden />
     </header>
