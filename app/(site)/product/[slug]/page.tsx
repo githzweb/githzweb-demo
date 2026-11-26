@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 
 import { Illustration } from "@/components/Illustration";
 import { ProductCard } from "@/components/ProductCard";
+import { AddToQuote } from "@/components/tools/AddToQuote";
 import { formatPrice, getProduct, getProducts } from "@/lib/catalogue";
 import { demoWhatsApp, SITE_URL } from "@/lib/site";
 
@@ -102,6 +103,7 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
                 Ask on WhatsApp
               </a>
               <p className="mt-2 text-center text-xs text-steel">Demo: this opens a chat with githzweb, the team that built this site.</p>
+              <AddToQuote slug={product.slug} variants={product.variants} />
             </div>
 
             {product.variants.length ? (

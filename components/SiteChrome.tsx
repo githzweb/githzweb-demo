@@ -16,8 +16,8 @@ export function Logo() {
 
 export function Header() {
   return (
-    <header className="border-b border-rule bg-white">
-      <div className="mx-auto flex h-[72px] max-w-[1240px] items-center justify-between gap-6 px-4">
+    <header className="border-b border-rule bg-white print:hidden">
+      <div className="mx-auto flex h-[72px] max-w-[1240px] items-center justify-between gap-3 px-4 md:gap-6">
         <Logo />
         <nav aria-label="Main" className="hidden items-center gap-7 md:flex">
           {NAV.map((n) => (
@@ -31,7 +31,7 @@ export function Header() {
             href={demoWhatsApp()}
             target="_blank"
             rel="noopener noreferrer"
-            className="whitespace-nowrap rounded-md bg-char px-4 py-2.5 text-sm font-semibold text-white hover:bg-black"
+            className="whitespace-nowrap rounded-md bg-char px-4 py-2.5 text-sm font-semibold text-white hover:bg-black max-[400px]:hidden"
           >
             Get a quote
           </a>
@@ -56,7 +56,7 @@ export function Header() {
 
 export function Footer() {
   return (
-    <footer className="mt-20 bg-char text-white/80">
+    <footer className="mt-20 bg-char text-white/80 print:hidden">
       <div className="mx-auto grid max-w-[1240px] gap-8 px-4 py-12 md:grid-cols-3">
         <div>
           <p className="text-lg font-extrabold text-white">Demo Hardware Co.</p>

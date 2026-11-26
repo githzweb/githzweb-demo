@@ -31,3 +31,15 @@ body {
 .hazard {
   background: repeating-linear-gradient(-45deg, var(--color-hivis) 0 12px, var(--color-char) 12px 24px);
 }
+
+/* Printing (quote + catalogue): keep brand colours, A4 pages */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+}
