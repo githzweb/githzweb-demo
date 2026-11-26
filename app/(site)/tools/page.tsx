@@ -70,6 +70,23 @@ export default function ToolsPage() {
           </li>
         ))}
       </ul>
+      <h2 className="mt-14 text-2xl font-black tracking-tight">Sample reports</h2>
+      <p className="mt-2 max-w-2xl text-steel">What clients receive from githzweb, written about this demo shop.</p>
+      <ul className="mt-5 grid gap-4 md:grid-cols-3">
+        {[
+          { href: "/rebuild", t: "Before & after", d: "The old site vs the rebuild, with measured speed results." },
+          { href: "/seo-report", t: "SEO audit", d: "Top 10 problems that hide a site from Google, in plain English." },
+          { href: "/care-report", t: "Monthly care report", d: "What was done this month, health checks and next steps." },
+        ].map((r) => (
+          <li key={r.href}>
+            <Link href={r.href} className={CARD}>
+              <span className="block text-lg font-black tracking-tight group-hover:underline">{r.t}</span>
+              <span className="mt-1 block text-sm text-steel">{r.d}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
       <div className="mt-10 rounded-xl bg-char p-8 text-white">
         <h2 className="text-2xl font-black tracking-tight">Want one of these for your business?</h2>
         <p className="mt-2 max-w-xl text-white/75">githzweb builds tools like these into your own website, set up around how your team works.</p>

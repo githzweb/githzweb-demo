@@ -95,6 +95,11 @@ export default function RebuildPage() {
           <p className="mt-1 text-xl font-black">The old &ldquo;before&rdquo; site &rarr;</p>
           <p className="mt-1 text-sm text-steel">Try it on your phone. It&rsquo;s slow on purpose.</p>
         </Link>
+        <Link href="/seo-report" className="rounded-xl border border-rule p-6 hover:border-char">
+          <p className="font-mono text-xs text-steel">REPORT</p>
+          <p className="mt-1 text-xl font-black">The SEO audit of the old site &rarr;</p>
+          <p className="mt-1 text-sm text-steel">Top 10 problems and what the rebuild fixed.</p>
+        </Link>
         <Link href="/products" className="rounded-xl border border-rule p-6 hover:border-char">
           <p className="font-mono text-xs text-steel">OPEN</p>
           <p className="mt-1 text-xl font-black">The new catalogue &rarr;</p>

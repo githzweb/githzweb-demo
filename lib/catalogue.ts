@@ -68,3 +68,18 @@ export function formatPrice(p: Pick<Product, "price" | "priceOnRequest">) {
   if (p.priceOnRequest || p.price == null) return null;
   return `RM${p.price.toLocaleString("en-MY", { minimumFractionDigits: p.price % 1 ? 2 : 0, maximumFractionDigits: 2 })}`;
 }
+
+export type RecentEdit = { name: string; model: string; slug: string; updatedAt: string; price?: number; priceOnRequest?: boolean };
+
+/** Facts for the monthly care report, read live from Sanity at build time. */
+export function getCareStats(monthStartIso: string) {
+  return client.fetch<{ products: number; collections: number; updatedThisMonth: number; recent: RecentEdit[] }>(
+    `{
+      "products": count(*[_type == "product"]),
+      "collections": count(*[_type == "collection"]),
+      "updatedThisMonth": count(*[_type == "product" && _updatedAt >= $start]),
+      "recent": *[_type == "product"] | order(_updatedAt desc)[0...5]{ name, model, "slug": slug.current, "updatedAt": _updatedAt, price, priceOnRequest }
+    }`,
+    { start: monthStartIso },
+  );
+}
