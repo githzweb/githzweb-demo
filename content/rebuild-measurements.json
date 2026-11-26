@@ -1,0 +1,27 @@
+{
+  "measuredWith": "Lighthouse (mobile, simulated slow 4G), run by githzweb",
+  "before": {
+    "url": "https://demo-hardware-githzweb.pages.dev/before",
+    "fetchTime": "2026-11-26T06:35:41.604Z",
+    "performance": 54,
+    "accessibility": 92,
+    "bestPractices": 93,
+    "seo": 66,
+    "lcpSeconds": 14.1,
+    "fcpSeconds": 1.2,
+    "pageWeightKb": 13655,
+    "requests": 21
+  },
+  "after": {
+    "url": "https://demo-hardware-githzweb.pages.dev/",
+    "fetchTime": "2026-11-26T06:36:04.284Z",
+    "performance": 95,
+    "accessibility": 100,
+    "bestPractices": 96,
+    "seo": 63,
+    "lcpSeconds": 2.2,
+    "fcpSeconds": 1.2,
+    "pageWeightKb": 329,
+    "requests": 45
+  }
+}
